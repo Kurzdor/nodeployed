@@ -73,7 +73,7 @@ $ pm2 start nodeployed [your settings]
 ### --port [PORT]
 
 Default: `9000`\
-Maximum: `65535`
+Maximum: `65535`\
 Type: `number`\
 Sets IPv4 port on which server will run and listen for requests.
 
@@ -86,3 +86,9 @@ Sets the token to validate server request.\
 
 Type: `string:required`\
 Sets the `absoulte` path to target deploy GIT repository.\
+
+### --branch [BRANCH_NAME]
+
+Default: `master`\
+Type: `string`\
+Sets the working branch for target deploy GIT repository.\
