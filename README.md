@@ -4,3 +4,51 @@
 </div>
 
 <hr />
+
+## Another deployer?!
+
+I wanted to make easily the process of deploying code to server on each push to repository. I tried almost all suggested ways to do it but they didn't work. So I created this package. It supports Bitbucket (GitHub and GitLab support in progress!) repos.
+
+## Server preparation
+
+To be able to use it sucessfully, you need:
+
+* Setup your Apache/NGINX server to *reverse proxy* all requests to `http://localhost:YOUR_PORT` in `location` block:
+
+* For NGINX:
+
+```
+# Your server in /etc/nginx/sites-available/example.com
+server {
+...
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+...
+}
+```
+
+* Clone repository that you want to work with with `git clone`
+* Run `sudo chown -R yourusername:webserverusername you-repo-dir-name/` for your repository directory to make script able to fully use `git` commands.
+
+## Usage
+
+There is two ways to install it:
+
+* Install globally via npm or yarn and start the process with pm2:
+
+```sh
+npm i -g nodeployed pm2
+pm2 start nodeployed [your settings]
+
+```
+
+```sh
+yarn add global nodeployed pm2
+pm2 start nodeployed [your settings]
+```
