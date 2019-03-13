@@ -5,6 +5,8 @@
 
 <hr />
 
+[![NPM version](https://img.shields.io/npm/v/nodeployed.svg?style=for-the-badge)](https://www.npmjs.com/package/nodeployed)
+[![License](https://img.shields.io/npm/l/nodeployed.svg?style=flat-square)](https://github.com/Kurzdor/nodeployed/blob/master/LICENSE)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=for-the-badge)](#contributors)
 
 
