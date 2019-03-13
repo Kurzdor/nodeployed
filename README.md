@@ -13,9 +13,9 @@ I wanted to make easily the process of deploying code to server on each push to 
 
 To be able to use it sucessfully, you need:
 
-* Setup your Apache/NGINX server to *reverse proxy* all requests to `http://localhost:YOUR_PORT` in `location` block:
+- Setup your Apache/NGINX server to _reverse proxy_ all requests to `http://localhost:YOUR_PORT` in `location` block:
 
-* For NGINX change your server block config to something like this:
+- For NGINX change your server block config to something like this:
 
 ```
 # Your server in /etc/nginx/sites-available/example.com
@@ -32,15 +32,25 @@ server {
 ...
 }
 ```
-* Optionally: [Install LetsEncrypt](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04) on that domain that you will use.
-* Clone repository that you want to work with with `git clone`
-* Run `sudo chown -R yourusername:webserverusername you-repo-dir-name/` for your repository directory to make script able to fully use `git` commands.
+
+- For Apache2:
+
+```
+<VirtualHost *:*>
+    ProxyPass / http://0.0.0.0:3000/
+    ServerName localhost
+</VirtualHost>
+```
+
+- Optionally: [Install LetsEncrypt](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04) on that domain that you will use.
+- Clone repository that you want to work with with `git clone`
+- Run `sudo chown -R yourusername:webserverusername you-repo-dir-name/` for your repository directory to make script able to fully use `git` commands.
 
 ## Usage
 
 There is two ways to install it:
 
-* Install globally via npm or yarn and start the process with pm2:
+- Install globally via npm or yarn and start the process with pm2:
 
 ```sh
 npm i -g nodeployed pm2
