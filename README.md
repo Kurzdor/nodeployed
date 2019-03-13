@@ -15,14 +15,14 @@ To be able to use it sucessfully, you need:
 
 * Setup your Apache/NGINX server to *reverse proxy* all requests to `http://localhost:YOUR_PORT` in `location` block:
 
-* For NGINX:
+* For NGINX change your server block config to something like this:
 
 ```
 # Your server in /etc/nginx/sites-available/example.com
 server {
 ...
     location / {
-        proxy_pass http://localhost:3000;
+        proxy_pass http://localhost:YOUR_PORT;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -32,7 +32,7 @@ server {
 ...
 }
 ```
-
+* Optionally: [Install LetsEncrypt](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04) on that domain that you will use.
 * Clone repository that you want to work with with `git clone`
 * Run `sudo chown -R yourusername:webserverusername you-repo-dir-name/` for your repository directory to make script able to fully use `git` commands.
 
