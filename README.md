@@ -50,7 +50,7 @@ server {
 
 There is two ways to install it:
 
-- Install globally via npm or yarn and start the process with pm2:
+- Install globally via npm or yarn and start the process with [pm2](http://pm2.keymetrics.io/):
 
 ```sh
 npm i -g nodeployed pm2
