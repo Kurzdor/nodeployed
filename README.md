@@ -80,15 +80,15 @@ Sets IPv4 port on which server will run and listen for requests.
 ### --token [TOKEN]
 
 Type: `string:required`\
-Sets the token to validate server request.\
+Sets the token to validate server request.
 
 ### --dir [DIR_PATH]
 
 Type: `string:required`\
-Sets the `absoulte` path to target deploy GIT repository.\
+Sets the `absoulte` path to target deploy GIT repository.
 
 ### --branch [BRANCH_NAME]
 
 Default: `master`\
 Type: `string`\
-Sets the working branch for target deploy GIT repository.\
+Sets the working branch for target deploy GIT repository.
