@@ -140,7 +140,7 @@ where user – username that gave you `pm2` from running the `pm2 startup system
 
 4. Now on any push to this GitLab repository `nodeployed` should pull changes on server and run deploy commands.
 
-### Bitbucket
+### Bitbucket:
 
 1. Go to the directory for which you would like to setup autodeploy to your server.
 2. Go to `Settings` => `Webhooks` => `Add webhook`.
