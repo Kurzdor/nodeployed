@@ -20,10 +20,10 @@ if (!typeof args.token === 'string') {
   process.exit(1)
 }
 
-if (!args.repo || !typeof args.repo === 'string') {
-  console.error(red(`ERROR! The argument --repo is invalid!`))
-  process.exit(1)
-}
+// if (!args.repo || !typeof args.repo === 'string') {
+//   console.error(red(`ERROR! The argument --repo is invalid!`))
+//   process.exit(1)
+// }
 
 if (!args.dir || !typeof args.dir === 'string') {
   console.error(red(`ERROR! The argument --dir is invalid!`))
