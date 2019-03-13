@@ -72,6 +72,8 @@ fastify.post('/', async (request, reply) => {
       for (let i = 0; i < commandsList.length; i += 1) {
         const command = commandsList[i]
 
+        console.log(command[0], command.splice(1))
+
         await execa(command[0], command.splice(1), {
           stdio: 'inherit',
         })
