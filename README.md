@@ -3,8 +3,9 @@
   Automatically deploy your code to server after push to repository.
 </div>
 
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=for-the-badge)](#contributors)
+
 <hr />
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 ## Another deployer?!
 
