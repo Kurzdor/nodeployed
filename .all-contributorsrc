@@ -1,0 +1,26 @@
+{
+  "projectName": "nodeployed",
+  "projectOwner": "Kurzdor",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Kurzdor",
+      "name": "Pavlo Ekshmidt",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/19878951?v=4",
+      "profile": "http://kurzdor.me",
+      "contributions": [
+        "code",
+        "doc",
+        "maintenance",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
