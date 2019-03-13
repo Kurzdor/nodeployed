@@ -203,7 +203,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/all-contri
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars2.githubusercontent.com/u/19878951?v=4" width="100px;" alt="Pavlo Ekshmidt"/><br /><sub><b>Pavlo Ekshmidt</b></sub>](http://kurzdor.me)<br />[💻](https://github.com/Kurzdor/nodeployed/commits?author=Kurzdor "Code") [📖](https://github.com/Kurzdor/nodeployed/commits?author=Kurzdor "Documentation") [🚧](#maintenance-Kurzdor "Maintenance") [🤔](#ideas-Kurzdor "Ideas, Planning, & Feedback") |
+| [<img src="https://avatars2.githubusercontent.com/u/19878951?v=4" width="100px;" alt="Pavlo Ekshmidt"/><br /><sub><b>Paul Ekshmidt</b></sub>](https://kurzdor.me)<br />[💻](https://github.com/Kurzdor/nodeployed/commits?author=Kurzdor "Code") [📖](https://github.com/Kurzdor/nodeployed/commits?author=Kurzdor "Documentation") [🚧](#maintenance-Kurzdor "Maintenance") [🤔](#ideas-Kurzdor "Ideas, Planning, & Feedback") |
 | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
