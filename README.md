@@ -7,17 +7,20 @@
 
 ## Another deployer?!
 
-I wanted to make easily the process of deploying code to server on each push to repository. I tried almost all suggested ways to do it but they didn't work. So I created this package. It supports Bitbucket (GitHub and GitLab support in progress!) repos.
+I wanted to make easily the process of deploying code to server on each push to repository. I tried almost all suggested ways to do it but they didn't work. So I created this package. It supports Ubuntu servers and Bitbucket (GitHub and GitLab support in progress!) repos.
 
 ## Server preparation
 
 To be able to use it sucessfully, you need:
 
+- Install Node.js and npm on your server
+
+
 - Setup your Apache/NGINX server to _reverse proxy_ all requests to `http://localhost:YOUR_PORT` in `location` block:
 
 - For NGINX change your server block config to something like this:
 
-```
+```nginx
 # Your server in /etc/nginx/sites-available/example.com
 server {
 ...
@@ -35,7 +38,7 @@ server {
 
 - For Apache2:
 
-```
+```apache
 <VirtualHost *:*>
     ProxyPass / http://0.0.0.0:3000/
     ServerName localhost
@@ -50,7 +53,7 @@ server {
 
 There is two ways to install it:
 
-- Install globally via npm or yarn and start the process with [pm2](http://pm2.keymetrics.io/):
+- Install globally via `npm` or `yarn` and start the process with [pm2](http://pm2.keymetrics.io/):
 
 ```sh
 npm i -g nodeployed pm2
@@ -62,3 +65,5 @@ pm2 start nodeployed [your settings]
 yarn add global nodeployed pm2
 pm2 start nodeployed [your settings]
 ```
+
+- Run without instalation with `NPX`
