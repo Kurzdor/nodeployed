@@ -33,7 +33,7 @@ const TOKEN = args.token || 'nodeployed'
 const PORT = args.port // This boy is required
 const DIR = args.dir // This boy is required
 const BRANCH = args.branch || 'master'
-const COMMAND = args.command
+const COMMAND = args.command || 'bash ./deploy.sh'
 const commandsList = []
 
 // Split commands if there are any of them by "AND" symbol
