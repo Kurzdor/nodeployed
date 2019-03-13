@@ -9,6 +9,10 @@
 
 I wanted to make easily the process of deploying code to server on each push to repository. I tried almost all suggested ways to do it but they didn't work. So I created this package. It supports Ubuntu servers and Bitbucket (GitHub and GitLab support in progress!) repos.
 
+## Uses
+
+Nodeployed uses [Fastify](https://www.fastify.io) as Node.js Server and [Execa](https://github.com/sindresorhus/execa) to run such commands to deploy code.
+
 ## Server preparation
 
 To be able to use it sucessfully, you need:
