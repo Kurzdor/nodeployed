@@ -94,8 +94,6 @@ fastify.post('/', async (request, reply) => {
           result: false,
           reason: error,
         })
-
-      process.exit(1)
     }
 
     await reply
