@@ -164,7 +164,7 @@ Default: `9000`\
 Maximum: `65535`\
 Type: `number`
 
-Sets IPv4 port on which server will run and listen for requests.
+Sets IPv4 port on which server will be running and listening for requests.
 
 ### --token [TOKEN]
 
