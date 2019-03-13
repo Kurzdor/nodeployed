@@ -11,7 +11,7 @@ I wanted to make easily the process of deploying code to server on each push to 
 
 ## Uses
 
-Nodeployed uses [Fastify](https://www.fastify.io) as Node.js Server and [Execa](https://github.com/sindresorhus/execa) to run such commands to deploy code.
+Nodeployed uses [Fastify](https://www.fastify.io) as Node.js Server, [Execa](https://github.com/sindresorhus/execa) to run such commands to deploy code and [Minimist](https://github.com/substack/minimist) to parse command arguments.
 
 ## Server preparation
 
@@ -58,12 +58,25 @@ server {
 Install package globally from `NPM repo` via `npm` or `yarn` and start the process with [pm2](http://pm2.keymetrics.io/):
 
 ```sh
-npm i -g nodeployed pm2
-pm2 start nodeployed [your settings]
+$ npm i -g nodeployed pm2
+$ pm2 start nodeployed [your settings]
 
 ```
 
 ```sh
-yarn add global nodeployed pm2
-pm2 start nodeployed [your settings]
+$ yarn add global nodeployed pm2
+$ pm2 start nodeployed [your settings]
 ```
+
+## Options
+
+`--port [PORT]`
+Default: `9000`
+
+Sets port on which server will run and listen for requests.
+
+`--token`
+Default: ``
+
+Sets the token to validate server request.
+`Without this argument nodeployed will throw an error!`
