@@ -30,15 +30,32 @@ if (!typeof args.branch === 'string') {
   process.exit(1)
 }
 
+if (!typeof args.command === 'string') {
+  console.error(red(`ERROR! The argument --command is invalid!`))
+  process.exit(1)
+}
+
 const TOKEN = args.token || 'nodeployed'
 const PORT = args.port
 const DIR = args.dir
 const BRANCH = args.branch || 'master'
+const COMMAND = args.command
+const commandsList = []
+
+COMMAND &&
+  COMMAND.split(' && ').forEach(el => {
+    const splittedCommand = el.split(' ')
+    commandsList.push(splittedCommand)
+  })
+
+// commandsList.forEach(async command => {
+//   await execa(command[0], command.splice(1), {
+//     stdio: 'inherit',
+//   })
+// })
 
 fastify.post('/', async (request, reply) => {
-  console.log(request)
-
-  const SENT_TOKEN = request.query.token
+  const SENT_TOKEN = request.query.token // ?token=MY_TOKEN
 
   if (SENT_TOKEN && SENT_TOKEN === TOKEN) {
     try {
@@ -51,6 +68,14 @@ fastify.post('/', async (request, reply) => {
       await execa('git', ['pull'], {
         stdio: 'inherit',
       })
+
+      for (let i = 0; i < commandsList.length; i += 1) {
+        const command = commandsList[i]
+
+        await execa(command[0], command.splice(1), {
+          stdio: 'inherit',
+        })
+      }
     } catch (error) {
       console.log(`${red('✖')} ${error}`)
 
