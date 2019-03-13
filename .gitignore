@@ -1,4 +1,4 @@
 node_modules/
-./github.response.md
-./gitlab.response.md
-./bb.response.md
+bb\.response\.md
+github\.response\.md
+gitlab\.response\.md
