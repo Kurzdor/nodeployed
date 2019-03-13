@@ -73,13 +73,16 @@ $ pm2 start nodeployed [your settings]
 ### --port [PORT]
 
 Default: `9000`\
+Maximum: `65535`
 Type: `number`\
-Sets port on which server will run and listen for requests.
+Sets IPv4 port on which server will run and listen for requests.
 
 ### --token [TOKEN]
 
-Type: `string`\
-Sets the token to validate server request.
-`Without this argument nodeployed will throw an error!`
+Type: `string:required`\
+Sets the token to validate server request.\
 
 ### --dir [DIR_PATH]
+
+Type: `string:required`\
+Sets the `absoulte` path to target deploy GIT repository.\
