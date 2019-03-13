@@ -71,12 +71,12 @@ $ pm2 start nodeployed [your settings]
 ## Options
 
 `--port [PORT]`
-Default: `9000`
 
+Default: `9000`
 Sets port on which server will run and listen for requests.
 
 `--token`
-Default: ``
 
+Default: ``
 Sets the token to validate server request.
 `Without this argument nodeployed will throw an error!`
