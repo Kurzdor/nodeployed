@@ -1,6 +1,6 @@
 {
   "name": "nodeployed",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Package that deploys code to server on each repository push via Webhooks",
   "main": "index.js",
   "bin": {
