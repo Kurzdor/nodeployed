@@ -23,11 +23,11 @@ if (!args.dir || !(typeof args.dir === 'string')) {
   process.exit(1)
 }
 
-// // handle and validate commands that we need to run
-// if (!(typeof args.command === 'string')) {
-//   console.error(red(`ERROR! The argument --command is invalid!`))
-//   process.exit(1)
-// }
+// handle and validate commands that we need to run
+if (!(typeof args.command === 'string')) {
+  console.error(red(`ERROR! The argument --command is invalid!`))
+  process.exit(1)
+}
 
 const TOKEN = args.token || 'nodeployed'
 const PORT = args.port // This boy is required
@@ -77,10 +77,12 @@ fastify.post('/', async (request, reply) => {
         console.log(commandsList)
         for (let i = 0; i < commandsList.length; i += 1) {
           const command = commandsList[i]
-          console.log(command[0])
           const commandArgs = command.slice(1)
-          console.log(commandArgs)
-          console.log(`Running ${command[0]} with arguments ${commandArgs}`)
+          console.log(
+            `[INFO] Running ${command[0]} with arguments ${commandArgs.join(
+              ' '
+            )}`
+          )
 
           await execa(command[0], commandArgs, {
             stdio: 'inherit',
