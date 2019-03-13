@@ -51,9 +51,7 @@ server {
 
 ## Usage
 
-There is two ways to install it:
-
-- Install globally via `npm` or `yarn` and start the process with [pm2](http://pm2.keymetrics.io/):
+Install package globally from `NPM repo` via `npm` or `yarn` and start the process with [pm2](http://pm2.keymetrics.io/):
 
 ```sh
 npm i -g nodeployed pm2
@@ -65,5 +63,3 @@ pm2 start nodeployed [your settings]
 yarn add global nodeployed pm2
 pm2 start nodeployed [your settings]
 ```
-
-- Run without instalation with `NPX`
