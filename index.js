@@ -45,8 +45,6 @@ COMMAND &&
     commandsList.push(splittedCommand)
   })
 
-console.log(commandsList[0][0], commandsList[0].splice(1))
-
 // Handle main POST route
 
 fastify.post('/', async (request, reply) => {
@@ -81,12 +79,7 @@ fastify.post('/', async (request, reply) => {
           console.log(command[0])
           const commandArgs = command.splice(1)
           console.log(commandArgs)
-
-          console.log(
-            `Running ${command[0]} with arguments ${command
-              .splice(1)
-              .join(' ')}`
-          )
+          console.log(`Running ${command[0]} with arguments ${commandArgs}`)
 
           await execa(command[0], commandArgs, {
             stdio: 'inherit',
