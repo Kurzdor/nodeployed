@@ -79,7 +79,7 @@ fastify.post('/', async (request, reply) => {
         for (let i = 0; i < commandsList.length; i += 1) {
           const command = commandsList[i]
           console.log(command[0])
-          const commandArgs = command.shift()
+          const commandArgs = command.splice(1)
           console.log(commandArgs)
 
           console.log(
