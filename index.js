@@ -78,7 +78,7 @@ fastify.post('/', async (request, reply) => {
         for (let i = 0; i < commandsList.length; i += 1) {
           const command = commandsList[i]
           console.log(command[0])
-          const commandArgs = command.splice(1)
+          const commandArgs = command.slice(1)
           console.log(commandArgs)
           console.log(`Running ${command[0]} with arguments ${commandArgs}`)
 
