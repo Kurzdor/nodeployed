@@ -74,6 +74,7 @@ fastify.post('/', async (request, reply) => {
 
       // If any commands then run them in a order as the user gave us
       if (!!commandsList.length) {
+        console.log(commandsList)
         for (let i = 0; i < commandsList.length; i += 1) {
           const command = commandsList[i]
           console.log(command[0])
