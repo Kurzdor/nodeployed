@@ -1,0 +1,30 @@
+{
+  "name": "nodeployed",
+  "version": "1.3.0",
+  "description": "Package that deploys code to server on each repository push via Webhooks",
+  "main": "index.js",
+  "bin": {
+    "nodeployed": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "server",
+    "deploy",
+    "git",
+    "webhook",
+    "repository"
+  ],
+  "author": "Kurzdor",
+  "license": "MIT",
+  "dependencies": {
+    "ansi-red": "^0.1.1",
+    "execa": "^1.0.0",
+    "fastify": "^2.0.1",
+    "get-port": "^4.2.0",
+    "minimist": "^1.2.0",
+    "pino-pretty": "^2.5.0"
+  }
+}
