@@ -1,10 +1,10 @@
 <div align="center">
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
   <h1>📦 nodeployed</h1>
   Automatically deploy your code to server after push to repository.
 </div>
 
 <hr />
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 ## Another deployer?!
 
