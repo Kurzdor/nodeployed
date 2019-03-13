@@ -1,4 +1,5 @@
 <div align="center">
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
   <h1>📦 nodeployed</h1>
   Automatically deploy your code to server after push to repository.
 </div>
@@ -196,3 +197,14 @@ Sets the working branch for target deploy GIT repository.
 ## LICENSE
 
 MIT
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/all-contributors/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars2.githubusercontent.com/u/19878951?v=4" width="100px;" alt="Pavlo Ekshmidt"/><br /><sub><b>Pavlo Ekshmidt</b></sub>](http://kurzdor.me)<br />[💻](https://github.com/Kurzdor/nodeployed/commits?author=Kurzdor "Code") [📖](https://github.com/Kurzdor/nodeployed/commits?author=Kurzdor "Documentation") [🚧](#maintenance-Kurzdor "Maintenance") [🤔](#ideas-Kurzdor "Ideas, Planning, & Feedback") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
