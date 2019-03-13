@@ -20,11 +20,6 @@ if (!typeof args.token === 'string') {
   process.exit(1)
 }
 
-// if (!args.repo || !typeof args.repo === 'string') {
-//   console.error(red(`ERROR! The argument --repo is invalid!`))
-//   process.exit(1)
-// }
-
 if (!args.dir || !typeof args.dir === 'string') {
   console.error(red(`ERROR! The argument --dir is invalid!`))
   process.exit(1)
@@ -37,46 +32,50 @@ if (!typeof args.branch === 'string') {
 
 const TOKEN = args.token || 'nodeployed'
 const PORT = args.port
-const REPO = args.repo
 const DIR = args.dir
 const BRANCH = args.branch || 'master'
 
 fastify.post('/', async (request, reply) => {
+  console.log(request)
+
   const SENT_TOKEN = request.query.token
-  if (request.headers['user-agent'] === 'Bitbucket-Webhooks/2.0') {
-    if (SENT_TOKEN && SENT_TOKEN === TOKEN) {
-      try {
-        process.chdir(path.resolve(DIR))
-        await execa('git', ['checkout', BRANCH], {
-          stdio: 'inherit',
-        })
-        await execa('git', ['pull'], {
-          stdio: 'inherit',
-        })
-      } catch (error) {
-        console.log(`${red('✖')} ${error}`)
-        process.exit(1)
-      }
-      await reply
-        .code(200)
-        .header('Content-Type', 'application/json; charset=utf-8')
-        .send({ result: true })
-    } else {
+
+  if (SENT_TOKEN && SENT_TOKEN === TOKEN) {
+    try {
+      process.chdir(path.resolve(DIR))
+
+      await execa('git', ['checkout', BRANCH], {
+        stdio: 'inherit',
+      })
+
+      await execa('git', ['pull'], {
+        stdio: 'inherit',
+      })
+    } catch (error) {
+      console.log(`${red('✖')} ${error}`)
+
       await reply
         .code(403)
         .header('Content-Type', 'application/json; charset=utf-8')
         .send({
           result: false,
-          reason: "Tokens doens't match. Please recheck your tokens",
+          reason: error,
         })
+
+      process.exit(1)
     }
+
+    await reply
+      .code(200)
+      .header('Content-Type', 'application/json; charset=utf-8')
+      .send({ result: true })
   } else {
     await reply
       .code(403)
       .header('Content-Type', 'application/json; charset=utf-8')
       .send({
         result: false,
-        reason: `Something strange is happening from IP ${request.ip}!`,
+        reason: "Tokens doens't match. Please recheck your tokens",
       })
   }
 })
@@ -85,12 +84,14 @@ fastify.get('/', async (request, reply) => {
   return 'Nodeployed is working! You should set this link in your Webhooks configuration for your repository!'
 })
 
-const start = async () => {
+const startNodeployed = async () => {
   try {
     await fastify.listen(PORT)
   } catch (err) {
     fastify.log.error(err)
+
     process.exit(1)
   }
 }
-start()
+
+startNodeployed()
