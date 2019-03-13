@@ -61,9 +61,13 @@ fastify.post('/', async (request, reply) => {
     try {
       process.chdir(path.resolve(DIR))
 
+      console.log(`Trying to checkout branch ${BRANCH}`)
+
       await execa('git', ['checkout', BRANCH], {
         stdio: 'inherit',
       })
+
+      console.log(`Pulling from remote repository...`)
 
       await execa('git', ['pull'], {
         stdio: 'inherit',
@@ -72,7 +76,9 @@ fastify.post('/', async (request, reply) => {
       for (let i = 0; i < commandsList.length; i += 1) {
         const command = commandsList[i]
 
-        console.log(command[0], command.splice(1))
+        console.log(
+          `Running ${command[0]} with arguments ${command.splice(1).join(' ')}`
+        )
 
         await execa(command[0], command.splice(1), {
           stdio: 'inherit',
