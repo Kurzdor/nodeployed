@@ -20,7 +20,7 @@
   "author": "Kurzdor",
   "license": "MIT",
   "dependencies": {
-    "ansi-red": "^0.1.1",
+    "concolor": "^0.1.11",
     "execa": "^1.0.0",
     "fastify": "^2.0.1",
     "get-port": "^4.2.0",

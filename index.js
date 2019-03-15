@@ -8,26 +8,10 @@ const logger = require('pino')({
 })
 const fastify = require('fastify')({ logger })
 const execa = require('execa')
-const red = require('ansi-red')
+const concolor = require('concolor')
+const validator = require('./lib/validator')
 
-// Validate port: it must be a valid IPv4 port
-if (!args.port || !(typeof args.port === 'number') || args.port >= 65536) {
-  console.error(red(`ERROR! The argument --port is invalid!`))
-  process.exit(1)
-}
-
-// Validate working directory: it needs to be a valid string and passed by user.
-// Otherwise just throw and error and quit
-if (!args.dir || !(typeof args.dir === 'string')) {
-  console.error(red(`ERROR! The argument --dir is invalid!`))
-  process.exit(1)
-}
-
-// handle and validate commands that we need to run
-if (!(typeof args.command === 'string')) {
-  console.error(red(`ERROR! The argument --command is invalid!`))
-  process.exit(1)
-}
+validator(args)
 
 const TOKEN = args.token || 'nodeployed'
 const PORT = args.port // This boy is required
@@ -73,24 +57,23 @@ fastify.post('/', async (request, reply) => {
       })
 
       // If any commands then run them in a order as the user gave us
-      if (!!commandsList.length) {
+      if (commandsList.length) {
         console.log(commandsList)
-        for (let i = 0; i < commandsList.length; i += 1) {
-          const command = commandsList[i]
+        commandsList.forEach( command => {
           const commandArgs = command.slice(1)
           console.log(
             `[INFO] Running ${command[0]} with arguments ${commandArgs.join(
               ' '
             )}`
           )
-
-          await execa(command[0], commandArgs, {
+          // Execute each command synchronously just as user ordered
+          execa.shellSync(command[0], commandArgs, {
             stdio: 'inherit',
           })
-        }
+        })
       }
     } catch (error) {
-      console.log(`${red('✖')} ${error}`)
+      console.log(concolor`${'✖'}(b,red) ${error}`)
 
       await reply
         .code(403)
@@ -106,12 +89,13 @@ fastify.post('/', async (request, reply) => {
       .header('Content-Type', 'application/json; charset=utf-8')
       .send({ result: true })
   } else {
+
     await reply
       .code(403)
       .header('Content-Type', 'application/json; charset=utf-8')
       .send({
         result: false,
-        reason: "Tokens doens't match. Please recheck your tokens",
+        reason: "Tokens don't match. Please recheck your tokens",
       })
   }
 })
