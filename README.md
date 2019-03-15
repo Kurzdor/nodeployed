@@ -12,11 +12,11 @@
 
 ## Another deployer?!
 
-I wanted to make easily the process of deploying code to server on each push to repository. I tried almost all suggested ways to do it but they didn't work. So I created this package. It supports Ubuntu servers and GitHub/GitLab/Bitbucket repos.
+I wanted to make the process of deploying code to server easier on each push to repository. I tried almost all suggested ways to do it but they didn't work. So I created this package. It supports Ubuntu servers and GitHub/GitLab/Bitbucket repos.
 
 ## Uses
 
-Nodeployed uses [Fastify](https://www.fastify.io) as Node.js server, [Execa](https://github.com/sindresorhus/execa) to run such commands to deploy code and [Minimist](https://github.com/substack/minimist) to parse command arguments.
+Nodeployed uses [Fastify](https://www.fastify.io) as Node.js server, [Execa](https://github.com/sindresorhus/execa) to run such commands to deploy code and [Minimist](https://github.com/substack/minimist) to parse command arguments, [Concolor](https://github.com/metarhia/concolor) for colored output.
 
 ## Server preparation
 
