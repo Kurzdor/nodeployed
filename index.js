@@ -67,10 +67,10 @@ fastify.post('/', async (request, reply) => {
             )}`
           )
           // Execute each command synchronously just as user ordered
-          execa(command[0], commandArgs, {
+          await execa(command[0], commandArgs, {
             stdio: 'inherit',
           })
-        })
+        }
       }
     } catch (error) {
       console.log(`${red('✖')} ${error}`)
