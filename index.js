@@ -8,7 +8,7 @@ const logger = require('pino')({
 })
 const fastify = require('fastify')({ logger })
 const execa = require('execa')
-const concolor = require('concolor')
+const red = require('ansi-red')
 const validator = require('./lib/validator')
 
 validator(args)
@@ -59,7 +59,7 @@ fastify.post('/', async (request, reply) => {
       // If any commands then run them in a order as the user gave us
       if (commandsList.length) {
         console.log(commandsList)
-        commandsList.forEach( command => {
+        for (const command of commandsList) {
           const commandArgs = command.slice(1)
           console.log(
             `[INFO] Running ${command[0]} with arguments ${commandArgs.join(
@@ -67,13 +67,13 @@ fastify.post('/', async (request, reply) => {
             )}`
           )
           // Execute each command synchronously just as user ordered
-          execa.shellSync(command[0], commandArgs, {
+          execa(command[0], commandArgs, {
             stdio: 'inherit',
           })
         })
       }
     } catch (error) {
-      console.log(concolor`${'✖'}(b,red) ${error}`)
+      console.log(`${red('✖')} ${error}`)
 
       await reply
         .code(403)
