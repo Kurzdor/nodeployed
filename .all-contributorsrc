@@ -20,6 +20,16 @@
         "maintenance",
         "ideas"
       ]
+    },
+    {
+      "login": "vladik2738",
+      "name": "Vladislav",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/35642018?v=4",
+      "profile": "http://dal9.me",
+      "contributions": [
+        "code",
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7
