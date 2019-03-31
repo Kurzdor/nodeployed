@@ -16,7 +16,7 @@ I wanted to make the process of deploying code to server easier on each push to 
 
 ## Uses
 
-Nodeployed uses [Fastify](https://www.fastify.io) as Node.js server, [Execa](https://github.com/sindresorhus/execa) to run such commands to deploy code and [Minimist](https://github.com/substack/minimist) to parse command arguments, [Ansi-red](https://github.com/jonschlinkert/ansi-red) for colored output.
+Nodeployed uses [Fastify](https://www.fastify.io) as Node.js server, [Execa](https://github.com/sindresorhus/execa) to run such commands to deploy code and [Minimist](https://github.com/substack/minimist) to parse command arguments.
 
 ## Server preparation
 
