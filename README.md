@@ -7,7 +7,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/nodeployed.svg?style=for-the-badge)](https://www.npmjs.com/package/nodeployed)
 [![License](https://img.shields.io/npm/l/nodeployed.svg?style=for-the-badge)](https://github.com/Kurzdor/nodeployed/blob/master/LICENSE)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=for-the-badge)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 
 ## Another deployer?!
@@ -207,8 +207,8 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/all-contri
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars2.githubusercontent.com/u/19878951?v=4" width="100px;" alt="Pavlo Ekshmidt"/><br /><sub><b>Paul Ekshmidt</b></sub>](https://kurzdor.me)<br />[💻](https://github.com/Kurzdor/nodeployed/commits?author=Kurzdor "Code") [📖](https://github.com/Kurzdor/nodeployed/commits?author=Kurzdor "Documentation") [🚧](#maintenance-Kurzdor "Maintenance") [🤔](#ideas-Kurzdor "Ideas, Planning, & Feedback") |
-| :---: |
+<table><tr><td align="center"><a href="https://kurzdor.me"><img src="https://avatars2.githubusercontent.com/u/19878951?v=4" width="100px;" alt="Paul Ekshmidt"/><br /><sub><b>Paul Ekshmidt</b></sub></a><br /><a href="https://github.com/Kurzdor/nodeployed/commits?author=Kurzdor" title="Code">💻</a> <a href="https://github.com/Kurzdor/nodeployed/commits?author=Kurzdor" title="Documentation">📖</a> <a href="#maintenance-Kurzdor" title="Maintenance">🚧</a> <a href="#ideas-Kurzdor" title="Ideas, Planning, & Feedback">🤔</a></td><td align="center"><a href="http://dal9.me"><img src="https://avatars0.githubusercontent.com/u/35642018?v=4" width="100px;" alt="Vladislav"/><br /><sub><b>Vladislav</b></sub></a><br /><a href="https://github.com/Kurzdor/nodeployed/commits?author=vladik2738" title="Code">💻</a> <a href="#infra-vladik2738" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td></tr></table>
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
